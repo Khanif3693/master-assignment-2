@@ -7,15 +7,15 @@ The goal of this assignment is to have you start working with the dynamic array 
 
 You are given a dynamic array implementation in `dynamicArray.c`. Currently, the array will grow to double the size when we add an item and it reaches capacity.  However, the array will never shrink.
 
-Your task is to modify the given functions (do not modify the prototypes or create new functions) to shrink the array when a remove causes the size to be 1/3rd of the capacity.
+Your task is to modify the given functions (do not modify the prototypes or create new functions) to shrink the array to half its capacity when a remove causes the size to be 1/3rd of the capacity.
 
 Answer the following questions and place your answer in a new file `P1.txt` that you add, commit, and push to your GitHub repo.
 
-1. Does `_dynArrSetCapacity`, as given, allow us to shrink the array? That is, can we call `_dynArrSetCapacity` with a capacity that is lower than the current capacity? If not, describe how the function fails when we attempt to resize to a smaller capacity.
+1. Does `_dynArrSetCapacity`, as given, allow us to shrink the array without causing an error?  If not, describe how the function fails when we attempt to resize to a smaller capacity.
 
 2. What functions in the dynamic array need to be modified to allow the it to be resized to a smaller capacity on remove?
 
-3. The code also has an stack interface that uses a dynamic array. While `topDynArr` and `pushDynArray` call existing dynamic array functions to achieve their goals, `pushDynArray` directly modifies the struct itself.  This is known as breaking encapsulation - what is the disadvantage of doing this? (Hint: See question 2)
+3. The code also has an stack interface that uses a dynamic array. While `topDynArr` and `pushDynArray` call existing dynamic array functions to achieve their goals, `popDynArray` directly modifies the struct itself.  This is known as breaking encapsulation - what is the disadvantage of doing this? (Hint: See question 2)
 
 Now, modify `dynamicArray.c` so that it correctly resizes the array as described above. When you make a change to a function please put a comment like so
 
@@ -31,6 +31,10 @@ Complete the functions in `stack_exercise.c`.  The comments contain further deta
 
 Your assignment will be graded by compiling it on `flip.engr.oregonstate.edu` using the provided `Makefile`, so make sure you have tested your work under those conditions.
 
+Some other requirements:
+* You may not change the function signatures (i.e. `void fooB(int k)`).
+* You may not add or remove files.
+
 The assignment is worth 100 points total.
 
 * Part I: 50 points
@@ -42,4 +46,4 @@ The assignment is worth 100 points total.
 
 ## Submission
 
-We'll be using GitHub Classroom for this assignment. You will submit your assignment via GitHub. Just make sure your completed files are committed and pushed by the assignment's deadline to the `master` branch of the GitHub repo that was created for you by GitHub Classroom.
+We'll be using GitHub Classroom for this assignment. You will submit your assignment via GitHub. Just make sure your completed files are committed and pushed by the assignment's deadline to the `master` branch of the GitHub repo that was created for you by GitHub Classroom.  A good way to check whether your files are safely submitted is to look at your assignment repo on the github.com (i.e. github.com/OSU-CS261-F16/assignment-2-YourGitHubUsername).  If your changes show up there, you can consider your files submitted.
