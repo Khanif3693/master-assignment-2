@@ -53,7 +53,7 @@ int valid_bracket(char * str){
 
     valid_bracket("({}[])") returns 1
     valid_bracket("({}([]))") returns 1
-    valid_bracket("({}([]){([]))}") returns 1
+    valid_bracket("({}([]){([])})") returns 1
     valid_bracket("({([]))") returns 0
 
   */
