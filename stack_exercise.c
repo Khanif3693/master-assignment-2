@@ -5,6 +5,21 @@
 
 
 int in_stack(DynArr * s,char tofind){
+
+
+  DynArr * v = createDynArr(10);
+   for(int i = 0; i < s->size-1; i++)
+   {
+if (EQ(topDynArr(s),tofind))
+  {
+    return 1;
+    break;
+  }
+  else
+  addDynArr(v,topDynArr(s) );
+
+   s->size--;
+  return 0;
   /*
      Returns 1 if the element `tofind` is present in DynArr `s`, 0
      otherwise.  Upon returning `s` should have its elements in the
@@ -22,8 +37,12 @@ int in_stack(DynArr * s,char tofind){
      Hint: use another stack to hold elements while you search
      and then restore the initial state of `s`
   */
+ for(int i = 0; i < v->size-1; i++){
+  addDynArr(s,TYPE topDynArr(v) );
 
-  return 0;
+   s->size--;
+
+ }
 }
 
 
@@ -57,6 +76,59 @@ int valid_bracket(char * str){
     valid_bracket("({([]))") returns 0
 
   */
+    DynArr * ss = createDynArr(10);
+  int length=strln(str);
+for (int i=0;i< length;i++)
+{
+  if( str[i]=='(' || str[i] =='[' || str[i] == '{' )
+		{   pushDynArr(ss, str[i]);
+		continue;
+}
+else
 
-  return 0;
+		    if ( str[i] == ')' )
+		{
+			if( topDynArr(ss) == '(' )
+			popDynArr(ss);
+
+		}
+    else
+		{
+
+
+			printf("Unbalanced string");
+			return 0;
+		}
+
+
+    else
+
+		if ( str[i] == ']' )
+		{
+		if( topDynArr(ss)== '[' )
+popDynArr(ss);
+continue;
+else
+		{
+			printf("Unbalanced string");
+			return 0;
+		}
+		}
+		else
+		if ( str[i] == '}' )
+		{
+		if( topDynArr(ss) == '{' )
+		popDynArr(ss);
+		else
+		{
+			printf("Unbalanced string");
+			return 0;
+		}
+		}
+if(isEmptyDynArr(ss))
+{
+  return 1;
+}
+
+
 }
