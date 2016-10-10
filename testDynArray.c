@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include "dynamicArray.h"
 
+#include "dynamicArray.c"
+
 
 void assertTrue(int predicate, char *message)
 {
