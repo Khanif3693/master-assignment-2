@@ -1,0 +1,27 @@
+Name: Hanif Khan
+
+<br><br>
+Q.1)Does _dynArrSetCapacity, as given, allow us to shrink the array without causing an error? <br>
+If not, describe how the function fails when we attempt to resize to a smaller capacity.<br>
+ Answer: Yes _dynArrSetCapacity will allows to shrink the array capacity by calling the function <br>
+_dynArrSetCapacity(DynArr *v, int newCap) where *v represent the pointer to the dynamic array and the integer variable<br>
+newCap represents the new capacity of the array.<br>
+But to shrink the capacity we need to call this function by passing the pointer and an integer every time whenever we need<br>
+to shrink the capacity.<br>
+<br><br><br>
+
+Q.2)What functions in the dynamic array need to be modified to allow the it to be resized to a smaller capacity on remove?<br><br>
+Answer: To shrink the capacity as instructd in the question we need to change the function  of <br>
+removeAtDynArr(DynArr *v, int idx). Beacause after every removal it will ccalculate the number of the data present in the<br>
+dynamic array, and if will go less the one third of the capacity then at this point we need to reduce the capacity to <br>
+its half which is done in the program.<br>
+<br><br><br>
+Q.3)The code also has an stack interface that uses a dynamic array. While topDynArr and pushDynArray call existing<br><br>
+ dynamic array functions to achieve their goals, popDynArray directly modifies the struct itself. <br>
+This is known as breaking encapsulation - what is the disadvantage of doing this? (Hint: See question 2)<br>
+<br><br>
+Answer:Since making change in any single function it causes affect to others function also.<br>
+some of the disadvnatages are as follows:<br><br>
+1) It creates confusion over the functions of dynamic array and stack function.<br>
+2) It creates Risk of more errors.<br>
+3) Errors are diffcult to overcome,<br>
