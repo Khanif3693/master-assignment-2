@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include "dynamicArray.h"
 #include "stack_exercise.h"
+#include "dynamicArray.c"
+#include "stack_exercise.c"
 
 void assertTrue(int predicate, char *message)
 {
