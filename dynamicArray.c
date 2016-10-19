@@ -237,6 +237,10 @@ void removeAtDynArr(DynArr *v, int idx){
    }
 
    v->size--;
+if(LT(3 * v->size,v->capacity ))
+
+v->capacity = v->capacity / 2 ;
+
 
 
 }
